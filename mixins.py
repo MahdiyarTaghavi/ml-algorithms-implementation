@@ -1,3 +1,5 @@
+from metrics import r2_score
+
 class PredictorMixin:
     def predict(self, X):
         pass
@@ -11,4 +13,4 @@ class TransformerMixin:
 
 class RegressorMixin:
     def score(self, X, y):
-        pass
+        return r2_score(y, self.predict(X))

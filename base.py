@@ -3,6 +3,11 @@ from abc import ABC, abstractmethod
 
 class BaseEstimator(ABC):
 
+    def __repr__(self):
+        params = self.get_params()
+        param_str = ", ".join(f"{k}={v!r}" for k, v in params.items())
+        return f"{self.__class__.__name__}({param_str})"
+
     @abstractmethod
     def fit(self, X, y, *args, **kwargs):
         pass

@@ -7,7 +7,7 @@ from mixins import TransformerMixin
 
 class PolynomialFeatures(BaseEstimator, TransformerMixin):
 
-    def __init__(self, degree=2, include_bias=True):
+    def __init__(self, degree=2, include_bias=False):
         self.degree = degree
         self.include_bias = include_bias  # whether to add a column of 1s
 
